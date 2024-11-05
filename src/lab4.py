@@ -1,6 +1,6 @@
 class WaterPump:
 
-    def __init__(self, power_consumption=0, brand="", volume_ph=0, price=0, name=""):
+    def __init__(self, power_consumption: int = 0, brand: str = "", volume_ph: int = 0, price: float = 0.0, name: str = ""):
         self.__power_consumption = power_consumption 
         self.__brand = brand
         self.__volume_ph = volume_ph
@@ -9,21 +9,19 @@ class WaterPump:
 
 
     
-    def get_power_consumption(self):
+    def get_power_consumption(self)-> int :
         return self.__power_consumption
-
-    def get_brand(self):
+    def get_brand(self)-> str :
         return self.__brand
-
-    def get_volume_ph(self):
+    def get_volume_ph(self)-> int :
         return self.__volume_ph
 
 
 
-    def __str__(self):
-        return f"{self.__power_consumption}, {self.__brand}, {self.__volume_ph}, {self.price}, {self.name}"
+    def __str__(self)-> str :
+        return f"Power consumption = {self.__power_consumption},Brand = {self.__brand}, Volume per hour = {self.__volume_ph}, Price = {self.price}, Name = {self.name}"
 
-    def __repr__(self):
+    def __repr__(self)-> str :
         return f"WaterPump(power_consumption='{self.__power_consumption}', brand='{self.__brand}', volume_ph='{self.__volume_ph}', price='{self.price}', name='{self.name}')"
 
 
@@ -33,12 +31,11 @@ class WaterPump:
 
 def main():
     waterpump_default = WaterPump()
-    waterpump_ultra = WaterPump(480, "Amio", 80, 3000, "Water pump superultra")
-    waterpump_samsung = WaterPump(500, "Samsung", 100, 4500, "Water pump FE23")
+    waterpump_ultra = WaterPump(480, "Amio", 80, 3000.0, "Water pump superultra")
+    waterpump_samsung = WaterPump(500, "Samsung", 100, 4500.0, "Water pump FE23")
     waterpumps = [waterpump_default, waterpump_ultra, waterpump_samsung]
     for waterpump in waterpumps:
-        print("Using string: ", str(waterpump))
-        print("Using repr: ", repr(waterpump))
+        print(waterpumps)
     
 
 if __name__ == "__main__":
