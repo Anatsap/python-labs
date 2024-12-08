@@ -11,8 +11,10 @@ class WaterPump:
     
     def get_power_consumption(self)-> int :
         return self.__power_consumption
+
     def get_brand(self)-> str :
         return self.__brand
+
     def get_volume_ph(self)-> int :
         return self.__volume_ph
 
@@ -20,10 +22,10 @@ class WaterPump:
 
     def __str__(self)-> str :
         return f"""Power consumption = {self.__power_consumption} W,
-Brand = {self.__brand},
-Volume per hour = {self.__volume_ph} L/h,
-Price = {self.price} $,
-Name = {self.name}"""
+            Brand = {self.__brand},
+            Volume per hour = {self.__volume_ph} L/h,
+            Price = {self.price} $,
+            Name = {self.name}"""
 
     def __repr__(self)-> str :
         return f"WaterPump(power_consumption='{self.__power_consumption}', brand='{self.__brand}', volume_ph='{self.__volume_ph}, price='{self.price}', name='{self.name})"
